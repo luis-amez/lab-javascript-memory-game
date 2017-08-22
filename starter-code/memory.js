@@ -71,7 +71,7 @@ MemoryGame.prototype.selectCard = function(card) {
         hideCard(this.selectedCards[0]);
         hideCard(card);
         this.selectedCards = [];
-      }.bind(this), 1000);
+      }.bind(this), 500);
     }
     this.pairsClicked++;
   }
