@@ -83,7 +83,7 @@ MemoryGame.prototype.selectCard = function(card) {
 // Compares two cards, returns true if they are equals
 MemoryGame.prototype.isMatch = function () {
   var match = false;
-  var sameHero = (this.selectedCards[0].attr('id') === this.selectedCards[1].attr('id'));
+  var sameHero = (this.selectedCards[0].attr('name') === this.selectedCards[1].attr('name'));
   if(sameHero) {
     match = true;
   }
@@ -109,15 +109,17 @@ $(document).ready(function(){
   memoryGame.cards.forEach(function(pic, index) {
     var sanitizedName = pic.name.split(' ').join('_');
 
-    html += '<div class= "card" id="card_' + sanitizedName + '">';
+    html += '<div class= "card" name="card_' + sanitizedName + '">';
     html += '<div class="back"';
     html += '    name="img/' + pic.name + '"';
-    html += '    id="'       + pic.img +  '">';
+    // html += '    id="'       + pic.img +  '">';
+    html += '>';
     html += '</div>';
     html += '<div class="front" ';
     html += 'style="background: url(\'img/' + pic.img + '\') no-repeat"';
     // html += 'style="background: url(img/' + pic.img + '") no-repeat"';
-    html += '    id="'       + pic.img +  '">';
+    // html += '    id="'       + pic.img +  '">';
+    html += '>';
     html += '</div>';
     html += '</div>';
   });
